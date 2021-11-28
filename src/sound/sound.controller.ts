@@ -33,7 +33,7 @@ import { Sound } from './sound.schema';
       return await this.service.create(createSoundDto);
     }
   
-    @Put(':id')
+    @Put(':id/play')
     async update(@Param('id') id: string, @Body() updateSoundDto: UpdateSoundDto) {
       const sound = this.service.findOne(id);
       const playbacks: number = (await sound).playbacks + 1;
