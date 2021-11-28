@@ -36,13 +36,7 @@ describe("NoteController Unit Tests", () => {
         } as CreateSoundDto;
     await soundController.create(dto);
     expect(spyService.create).toHaveBeenCalled();
-      
-    // try {
-    //     await soundController.create(dto);
-    //   } catch (error) {
-    //     expect(error).toBeInstanceOf(BadRequestException);
-    //     done()
-    //   }
+
   })
 
   it("calling get all sounds method", () => {
