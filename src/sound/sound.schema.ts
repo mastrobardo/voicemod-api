@@ -5,8 +5,6 @@ export type SoundDocument = Sound & Document;
 
 @Schema()
 export class Sound {
-  @Prop({ required: true })
-  id: number;
 
   @Prop({ required: true })
   name: string;
