@@ -3,8 +3,8 @@ import { BaseSoundDto } from "./base.dto";
 export class CreateSoundDto extends BaseSoundDto {
     icon: string;
     name: string; 
-    price: number;
-    playbacks: number;
+    price?: number;
+    playbacks?: number;
 }
 
 export class UpdateSoundDto extends BaseSoundDto {

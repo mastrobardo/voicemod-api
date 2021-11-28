@@ -8,7 +8,6 @@ import {
     Put,
   } from '@nestjs/common';
   import { CreateSoundDto, UpdateSoundDto } from './create-sound.dto';
-import { Sound } from './sound.schema';
   import { SoundService } from './sound.service';
 
   
@@ -23,13 +22,14 @@ import { Sound } from './sound.schema';
   
     @Get(':id')
     async find(@Param('id') id: string) {
+      console.log(id)
       return await this.service.findOne(id);
     }
   
     @Post()
     async create(@Body() createSoundDto: CreateSoundDto) {
       createSoundDto.playbacks = 0;
-      console.log(createSoundDto, createSoundDto.playbacks)
+      createSoundDto.price = 0;
       return await this.service.create(createSoundDto);
     }
   
