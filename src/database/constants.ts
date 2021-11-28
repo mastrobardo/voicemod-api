@@ -1,0 +1,1 @@
+export const MONGO_DB_CONNECTION_STRING = process.env.MONGO_DB_CONNECTION_STRING || 'mongodb://172.17.0.2:27017/test';
