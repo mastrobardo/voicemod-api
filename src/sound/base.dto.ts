@@ -1,4 +1,5 @@
 export class BaseSoundDto {
-    name: string
-    id: string
+    name: string;
+    id: string;
+    icon: string;
  }
