@@ -1,1 +1,1 @@
-docker build -t voicemod-api .
+docker build -t voicemod-api --name voicemod-api .
