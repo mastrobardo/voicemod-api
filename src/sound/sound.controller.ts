@@ -55,7 +55,11 @@ export class SoundController {
   @Header('content-type', 'application/json')
   @Header('cache-control', 'no-cache')
   async find(@Param('id') id: string) {
-    return await this.service.findOne(id);
+    const result = await this.service.findOne(id);
+    if (!result) {
+      throw new HttpException('Found with this id was not found', HttpStatus.NOT_FOUND);
+    }
+    return result
   }
 
   @ApiOkResponse({
@@ -73,7 +77,7 @@ export class SoundController {
   @Post()
   @Header('content-type', 'application/json')
   async create(@Body() createSoundDto: CreateSoundDto) {
-    if (!createSoundDto.name || createSoundDto.icon) {
+    if (!createSoundDto.name || !createSoundDto.icon) {
       throw new HttpException('Bad request, some required filed is missing', HttpStatus.BAD_REQUEST);
     }
     createSoundDto.playbacks = 0;
