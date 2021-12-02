@@ -57,7 +57,7 @@ export class SoundController {
   async find(@Param('id') id: string) {
     const result = await this.service.findOne(id);
     if (!result) {
-      throw new HttpException('Found with this id was not found', HttpStatus.NOT_FOUND);
+      throw new HttpException('Sound with this id was not found', HttpStatus.NOT_FOUND);
     }
     return result
   }

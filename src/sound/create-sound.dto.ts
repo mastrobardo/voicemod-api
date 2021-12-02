@@ -7,8 +7,8 @@ export class CreateSoundDto extends BaseSoundDto {
     price?: number;
 }
 
-export class UpdateSoundDto extends BaseSoundDto {
+export class UpdateSoundDto {
   id: string;
-  playbacks: number;
-  price: number;
+  playbacks?: number;
+  price?: number;
 }
