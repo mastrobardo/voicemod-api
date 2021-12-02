@@ -37,7 +37,6 @@ const soundMockRepository = {
 describe('SoundController', () => {
   let soundController: SoundController;
   let soundService: SoundService;
-  let spyModel: Model<SoundDocument>;
 
   beforeEach(async () => {
     const moduleRef = await Test.createTestingModule({
@@ -51,7 +50,6 @@ describe('SoundController', () => {
 
     soundService = moduleRef.get<SoundService>(SoundService);
     soundController = moduleRef.get<SoundController>(SoundController);
-    spyModel = moduleRef.get<Model<SoundDocument>>(getModelToken(Sound.name));
   });
 
     describe('GET index', () => {
