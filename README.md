@@ -36,6 +36,8 @@ this is an example POST request
 
 I suggest to play a bit with both dimensions and colors to test the frontend.
 
+![Alt text](readme.png?raw=true "Postman")
+
 **TECH USED**   
 I used NestJs for the server side, i find it wonderful.  
 I didnt have time to implement mem-cache, authorization path nor a simple load balancer. Apologies.
