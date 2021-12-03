@@ -81,7 +81,7 @@ export class SoundController {
       throw new HttpException('Bad request, some required filed is missing', HttpStatus.BAD_REQUEST);
     }
     createSoundDto.playbacks = 0;
-    createSoundDto.price = 0;
+    if(createSoundDto.price === undefined )createSoundDto.price = 0;
     return await this.service.create(createSoundDto);
   }
 
