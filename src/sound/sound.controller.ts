@@ -97,8 +97,10 @@ export class SoundController {
   async update(@Param('id') id: string, @Body() updateSoundDto: UpdateSoundDto) {
     const sound: Sound = this.service.findOne(id) as unknown as Sound;
     const playbacks: number = (await sound).playbacks + 1;
+    const price: number = (await sound).price;
     updateSoundDto.playbacks = playbacks;
-    updateSoundDto.price = playbacks * 0.01;
+    const update: number = 0.01;
+    updateSoundDto.price = price > 0 ? Math.round((price + update) * 100)/100 : update;
     return await this.service.update(id, updateSoundDto);
   }
 
