@@ -24,6 +24,7 @@ Remember the API server is working on port 3000.
 I suggest using this service https://placeholder.com/ for icons urls. ( i didnt implement a serialiser for them due to scarce time );
 
 The only fields to be filled are 'icon' and 'name'. ID is created by mongo ( but is still required).
+Price field will set a base price id present, if not it will default to 0.
 
 Remeber to send jsons as body.    
 this is an example POST request   
